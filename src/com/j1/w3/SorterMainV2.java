@@ -1,11 +1,10 @@
 /*
- * This is java programming homework.
- * 
+ * This is java programming homework. (week 3)
  */
 
-package com.sd.sort.v2;
+package com.j1.w3;
 import java.util.Date;
-import com.sd.turtle.WeightTurtle;
+import com.j1.w2.WeightTurtle;
 
 public class SorterMainV2 {
     public static void main(String[] args) {
@@ -18,10 +17,10 @@ public class SorterMainV2 {
         for(int i=0; i<d1d2.length; i++)
             System.out.println("DateArray["+i+"]="+d1d2[i]);
         /*
-         * date 실행하면 결과값이
-         * DateArray[i] = 요일 월 날짜 시간
-         * 이런식으로 결과값이나옴 수진이언니생일 1995.11.6월이 내생일 1996.5.25보다
-         * 먼저 정렬되어있음
+         * date return
+         * DateArray[i] = day month date hour
+         * LeeSuJin's birthday is 1995.11.6. And my birthday is 1996.5.25
+         * So, birthday sort -> 1.SuJin's birthday  2.my birthday
          */
 
         WeightTurtle wt30 = new WeightTurtle(30);
@@ -34,20 +33,15 @@ public class SorterMainV2 {
         for(int i=0; i<wts.length; i++)
             System.out.println("WeightTurtleArray["+i+"]="+wts[i].getWeight());
         /*
-         * 터틀실행잘됨 
+         * Turtle sort is very Good!
          */
         
-        String[] B={"KangSuBin" , "LeeSuJin" , "OhEunJu" , "BaekDoHyun"};
-        Comparator stringComp=new StringComparator();
-        Sorter.sort(B, stringComp);
+        String[] reverseArray = {"A","C"};
+        Comparator reverseComp = new ReverseComparator();
+        Sorter.sort(reverseArray,reverseComp);
         
-        String [] sArray = {"KangSuBin" , "LeeSuJin" , "OhEunJu" , "BaekDoHyun"};
-        Comparator reverseComp = new ReverseComparator(stringComp);
-        Sorter.sort(sArray,reverseComp);
-        
-        for (int i=0;i<sArray.length; i++)
-          System.out.println("ReverseArray["+i+"]="+sArray[i]);
-        
+        for(int i=0; i<reverseArray.length; i++)
+          System.out.println("ReverseArray["+i+"]="+reverseArray[i]);
     }
 }
 
@@ -94,14 +88,5 @@ class ReverseComparator implements Comparator {
 class TurtleComparator implements Comparator {
     public int compare(Object t1, Object t2) {
         return ((WeightTurtle)t1).getWeight()-((WeightTurtle)t2).getWeight();
-    }
-}
-
-class StringComparator implements Comparator {
-    public StringComparator() {}
-    public int compare(Object o1, Object o2) {
-        String s1=(String)o1;
-        String s2=(String)o2;
-        return s1.compareTo(s2);
     }
 }
