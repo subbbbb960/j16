@@ -1,0 +1,13 @@
+interface Comparator {
+    +compare(Object o1, Object o2):int
+}
+
+class Sorter {
+    +sort(Object[], Comparator):void
+}
+Comparator <|.. TurtleComparater
+Comparator <|.. DataComparater
+Comparator <|.. ReverseComparater
+Comparator <.. Sorter
+SorterMain .up.> Comparator
+SorterMain .up.> Sorter
