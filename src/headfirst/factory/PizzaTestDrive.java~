@@ -1,0 +1,9 @@
+package headfirst.factory;
+
+public class PizzaTestDrive{
+  public static void main (String[] args){
+    SimplePizzaFactory factory=new SimplePizzaStore();
+    PizzaStrore store=new PizzaStore(factory);
+    Pizza pizza=store.orderPizza("cheese");
+  }
+}
