@@ -1,0 +1,11 @@
+public class SimpleRemoteControl {
+  Command command;
+  
+  public SimpleRemoteControl(){
+  }
+  public setCommand(Command command){
+    this.command=command
+  }
+  public buttonPressed(){
+  }
+}

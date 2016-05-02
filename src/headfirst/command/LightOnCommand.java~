@@ -1,0 +1,9 @@
+public class LightOnCommand implements Command {
+  Light light;
+  
+  public void LightOnCommand(Light light){
+  }
+  
+  public void execute(){
+  }
+}
